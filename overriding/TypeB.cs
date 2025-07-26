@@ -15,6 +15,9 @@ namespace sessionOOP02.overriding
         //1.apply override using 'new'keyword
         //2.apply override using 'override'keyword
 
+        //static binding 
+        //complier will bind function call based on reference type not the object type 
+        //at compilation 
 
         public void fun01() //using new keyword
         {
@@ -27,6 +30,9 @@ namespace sessionOOP02.overriding
         //    Console.WriteLine($"A : {A} , B: {B}");
         //}
 
+        //dynamic binding 
+        //CLR will bind the function call based on object type not the reference type 
+        //reltime 
 
     }
 }

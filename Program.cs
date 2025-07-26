@@ -105,11 +105,13 @@ namespace sessionOOP02
             //sum() 
             #endregion
 
+
+            #region 3.2.polymorphism methods (functions ) overriding 
             //3.2.polymorphism methods (functions ) overriding 
             //there are more than one functions [in different class] these have
             //the same name and the same signature but with behaviour
 
-            TypeB typeB = new TypeB() { A=12,B=13};
+            TypeB typeB = new TypeB() { A = 12, B = 13 };
 
             //typeB.A = 12;
             //typeB.B = 12;
@@ -119,7 +121,32 @@ namespace sessionOOP02
 
 
             typeB.fun01();
-            typeB.fun02();
+            typeB.fun02(); 
+            #endregion
+
+
+            //binding 
+            //what is binding ? 
+
+            //referencefromparent ---> objectchild 
+
+            TypeA Ref;
+
+            //Ref = new TypeA();
+            //Ref = new Typeb();
+
+            //child is a parent 
+
+            //TypeB ia a typea 
+
+            Ref = new TypeB();
+
+            Ref.A = 12;
+            //Ref.B = 12;
+
+            Ref.fun01(); // static binding method 
+            //Ref.fun02();
+
 
 
         }
