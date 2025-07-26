@@ -28,7 +28,8 @@ namespace sessionOOP02
     internal class Program
     {
 
-        static int sum (int X , int Y )
+        #region polymorphism methods (functions) overloading 
+        static int sum(int X, int Y)
         {
             return X + Y;
         }
@@ -37,18 +38,31 @@ namespace sessionOOP02
             return X + Y;
         }
 
-        static int sum(int X, int Y ,int Z)
+        static int sum(int X, int Y, int Z)
         {
-            return X + Y + Z ;
+            return X + Y + Z;
         }
 
         static double sum(int X, double Y)
         {
-            return X + Y ;
+            return X + Y;
         }
         static double sum(double X, int Y)
         {
             return X + Y;
+        }
+        #endregion
+
+        //static void Employeeprocess (FulltimeEmployee employee)
+        //{
+        //    employee.fun01();
+        //    employee.fun02();
+        //}
+
+        static void Employeeprocess(employee employee)
+        {
+            employee.fun01();
+            employee.fun02();
         }
 
         static void Main(string[] args)
@@ -121,10 +135,11 @@ namespace sessionOOP02
 
 
             typeB.fun01();
-            typeB.fun02(); 
+            typeB.fun02();
             #endregion
 
 
+            #region what is binding 
             //binding 
             //what is binding ? 
 
@@ -145,7 +160,89 @@ namespace sessionOOP02
             //Ref.B = 12;
 
             Ref.fun01(); // static binding method 
-            //Ref.fun02();
+                         //Ref.fun02(); 
+            #endregion
+
+
+            #region not binding 
+
+            //binding 
+            //refparent ---> objchild 
+
+            //TypeA Ref = new TypeA();
+
+            //Ref = new TypeB(); // Binding 
+
+            //TypeB Ref = new TypeB();
+
+
+            //Ref = new TypeA(); 
+
+            //child is a parent 
+
+            //animal --> Dog is a animal 
+            //Dog -> animal : animal is a dog 
+
+            //TypeA Ref = new TypeA();
+
+            //Ref = new TypeB();
+
+            //TypeB typeB = (TypeB)Ref; //not binding  
+            #endregion
+
+
+            #region when u need binding ??
+
+            //when u need binding ??
+
+            //fulltimeEmployee : id , name , address , Email , salary 
+
+            //FulltimeEmployee fulltime = new FulltimeEmployee()
+            //{
+            //    id = 1,
+            //    name = "ahmed",
+            //    Email = "ahmed@.c",
+            //    address = "cairo",
+            //    salary = 12000
+            //};
+
+            ////parttimeemployee : id , name , address , email , numberofhours , hourrate 
+
+            //Employeeprocess(fulltime);
+
+            //parttimeemployee parttime = new parttimeemployee()
+            //{
+            //    id = 1,
+            //    name = "ali",
+            //    Email = "ali@.com",
+            //    address = "alex",
+            //    hourrate = 300,
+            //    numberofhours = 200,
+
+            //};
+
+            // int x; 
+            #endregion
+
+
+            #region types EX
+            TypeA typeA;
+
+            typeA = new TypeA();
+            typeA = new TypeB(); // TypeA is a parent of typeB
+            typeA = new TypeC(); // TypeA is a indirect parent of typeC
+            typeA = new TypeD(); // TypeA is a indirect parent of typeD
+            typeA = new TypeE(); // TypeA is a indirect parent of typeE
+
+            typeA.A = 12;
+            //typeA.B = 12;
+            //typeA.C = 12;
+            //typeA.D = 12;
+
+            typeA.fun01();
+            typeA.fun02(); 
+            #endregion
+
 
 
 
